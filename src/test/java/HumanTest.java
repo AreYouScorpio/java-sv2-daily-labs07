@@ -4,11 +4,11 @@ import org.junit.Assert.*;
 
 public class HumanTest {
 
-    Human human = new Human(1977, "Akos", "Schweger");
+    Human human = new Human(1977, "Akos Schweger");
 
     @Test
     void testAge;
-    assertEquals(1977, )
+    assertEquals("Akos Schweger", Human.)
 
 
 }

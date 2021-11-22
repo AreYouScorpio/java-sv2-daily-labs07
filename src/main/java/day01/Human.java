@@ -1,32 +1,32 @@
 package day01;
 
+import java.time.LocalDate;
+
 public class Human {
-    int yearOfBirth;
-    String name1;
-    String name2;
+    private int yearOfBirth;
+    private String name;
 
 
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
 
-    public Human(int year, String name1, String name2) {
-        if (yearOfBirth > 120) {
-            throw new IllegalArgumentException("Szül év hiba !")
+
+    public String getName () {
+        return name;
+    }
+
+    public Human(int year, String name) {
+        if (Math.abs(LocalDate.now().getYear() - yearOfBirth) <= 120 && name != null && name.indexOf(" ") > 0) {
             this.yearOfBirth = year;
-            this.name1 = name1;
-            this.name2 = name2;
-
-        }
-
-        public int getYear () {
-            return yearOfBirth;
-        }
-
-
-        public String getName1 () {
-            return name1;
-        }
-
-        public String getName2 () {
-            return name2;
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Szül év hiba !");
         }
     }
-}
+
+
+
+
+
+    }
