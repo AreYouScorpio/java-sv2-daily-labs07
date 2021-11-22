@@ -7,6 +7,31 @@ public class Human {
     private String name;
 
 
+
+
+    public Human(int year, String name) {
+        if (isYearOfBirthValid(yearOfBirth) && isNameValid(name)) {
+            this.yearOfBirth = year;
+            this.name = name;
+        }
+    }
+
+
+    private boolean isYearOfBirthValid(int yearOfBirth){
+        if(LocalDate.now().getYear()-yearOfBirth>120){
+            throw new IllegalArgumentException("Invalid year!");
+        }
+        return true;
+    }
+
+    private boolean isNameValid(String name)
+    {
+       if (!(name != null && name.indexOf(" ") > 0)) {
+           throw new IllegalArgumentException("Name is invalid.")
+       }
+       return true;
+    };
+
     public int getYearOfBirth() {
         return yearOfBirth;
     }
@@ -14,23 +39,6 @@ public class Human {
 
     public String getName () {
         return name;
-    }
-
-    public Human(int year, String name) {
-        if (Math.abs(LocalDate.now().getYear() - yearOfBirth) <= 120 && name != null && name.indexOf(" ") > 0) {
-            this.yearOfBirth = year;
-            this.name = name;
-        } else {
-            throw new IllegalArgumentException("Parameters invalid!");
-        }
-    }
-
-
-    private boolean validateYearOfBirth(int yearOfBirth){
-        if(LocalDate.now().getYear()-yearOfBirth>120){
-            throw new IllegalArgumentException("Invalid year!");
-        }
-        return true;
     }
 
 
