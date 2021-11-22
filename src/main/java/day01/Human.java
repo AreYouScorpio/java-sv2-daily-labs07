@@ -21,12 +21,17 @@ public class Human {
             this.yearOfBirth = year;
             this.name = name;
         } else {
-            throw new IllegalArgumentException("Szül év hiba !");
+            throw new IllegalArgumentException("Parameters invalid!");
         }
     }
 
 
-
+    private boolean validateYearOfBirth(int yearOfBirth){
+        if(LocalDate.now().getYear()-yearOfBirth>120){
+            throw new IllegalArgumentException("Invalid year!");
+        }
+        return true;
+    }
 
 
     }
