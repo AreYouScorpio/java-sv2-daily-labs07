@@ -9,12 +9,12 @@ import java.util.List;
 public class Movie {
     private String title;
     private int year;
-    private String author;
+    private String director;
 
     public Movie(String title, int year, String author) {
         this.title = title;
         this.year = year;
-        this.author = author;
+        this.director = author;
     }
 
     public String getTitle() {
@@ -25,16 +25,9 @@ public class Movie {
         return year;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getDirector() {
+        return director;
     }
 
-    private List<String> readFilms(){
-        try {
-            return Files.readAllLines(Paths.get("movies.csv"));
-        }
-        catch (IOException ioe) {
-            throw new IllegalArgumentException("Cannot read file.", ioe);
-        }
+
     }
-}
