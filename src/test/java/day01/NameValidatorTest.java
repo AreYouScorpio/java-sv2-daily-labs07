@@ -22,12 +22,15 @@ class NameValidatorTest {
 
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, ()-> nameValidator.isNameValid(null));
         assertEquals("Name is invalid." , iae.getMessage());
+        // System.out.println(iae.getMessage());
+
     }
 
     @Test
     void isNameValidWithWrongNameTest(){
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, ()-> nameValidator.isNameValid("John"));
         assertEquals("Name is invalid." , iae.getMessage());
+        // System.out.println(iae.getMessage());
     }
 
 
