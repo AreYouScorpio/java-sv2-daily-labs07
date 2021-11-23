@@ -6,6 +6,8 @@ import java.nio.file.Path;
 public class MovieMain {
     public static void main(String[] args)  throws IOException {
         MovieService movieService = new MovieService(Path.of("src/main/resources/movies.csv") );
-        System.out.println(movieService.getMovies().get(0).getTitle());
+        for (int i=0; i<movieService.getMovies().size(); i++){
+            System.out.println(movieService.getMovies().get(i).getTitle());
+        }
     }
 }
