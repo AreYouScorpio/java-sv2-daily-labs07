@@ -9,8 +9,9 @@ import java.util.List;
 
 public class MovieService {
     public static void main(String[] args) {
+        Movie movie = new Movie();
     try{
-        List<String> filmek = Files.readAllLines(Paths.get("movies.csv"));
+        readFilms("movies.csv");
         System.out.println(filmek);
     }
     catch (IOException ioe){
