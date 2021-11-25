@@ -1,12 +1,9 @@
 package day04;
 
-import day02.Movie;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 import static day04.Courier.addRide;
