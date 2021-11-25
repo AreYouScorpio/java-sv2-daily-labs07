@@ -27,7 +27,6 @@ public class CourierFileManagerTest {
     @Test
     public void testNotExistingFile() {
         Path path = Paths.get("src/main/resources/courrier.txt");
-
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> createCourierByFile(path));
         System.out.println(exception.getMessage());
