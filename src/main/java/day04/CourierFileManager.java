@@ -22,7 +22,7 @@ public class CourierFileManager {
             input = Files.readAllLines(path);
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            throw new IllegalArgumentException("Olvasási hiba" + "\n" + ioe.getMessage());
+            throw new IllegalArgumentException("Olvasási hiba");
         }
 
         System.out.println(input);

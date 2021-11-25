@@ -1,9 +1,9 @@
 package day04;
 
 public class Ride {
-    int day;
-    int rideNumberThisDay;
-    int km;
+    private  int day;
+    private  int rideNumberThisDay;
+    private  int km;
 
     public Ride(int day, int rideNumberThisDay, int km) {
         this.day = day;
