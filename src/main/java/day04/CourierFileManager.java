@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import static day04.Courier.addRide;
 import static day04.Courier.rides;
 
 public class CourierFileManager {
@@ -37,6 +38,9 @@ public class CourierFileManager {
     public static void main(String[] args) {
         CourierFileManager courierFileManager = new CourierFileManager();
         createCourierByFile(Path.of("src/main/resources/courier.txt"));
+        addRide((new Ride(4,4,5)));
+        System.out.println(rides);
+
     }
 
 }
