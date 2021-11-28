@@ -1,11 +1,13 @@
 package day05;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -20,13 +22,14 @@ public class Store {
         else throw new IllegalArgumentException("Rossz dátum.");
     }
 
-    public void writeProduct (int month, Path path){
+    public void writeProduct(int month, Path path){
         try{
-            List<String> readable = new ArrayList<>();
+            StringBuilder sb = new StringBuilder();
             for (Product p : products) {
-                if (p.getSellingDate().getMonth().getValue()==month) readable.add(p.getName()+";"+p.getSellingDate()+";"+p.getPrice());
+                if (p.getSellingDate().getMonth().getValue()==month) sb.append(p.getName()).append(";").append(p.getSellingDate()).append(";").append(p.getPrice()).append("\n");
             }
-                Files.write(path, readable);
+            System.out.println(sb);
+            Files.write(path, sb.toString().getBytes(StandardCharsets.UTF_8));
         }
         catch (IOException ioe){
             ioe.printStackTrace();
