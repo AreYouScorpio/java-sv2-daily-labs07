@@ -24,7 +24,7 @@ public class StoreTest {
         store.addProduct(product1);
         store.addProduct(product2);
         // store.addProduct(product3);
-        store.writeProduct(1, Path.of("product.csv"));
+        store.writeProduct(1, Path.of("src/main/resources/product.csv"));
 
 /*
         List<String> input = null;
