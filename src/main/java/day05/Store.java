@@ -25,11 +25,15 @@ public class Store {
     public void writeProduct(int month, Path path){
         try{
             StringBuilder sb = new StringBuilder();
+            List<String> productListToWrite = new ArrayList<>();
             for (Product p : products) {
                 if (p.getSellingDate().getMonth().getValue()==month) sb.append(p.getName()).append(";").append(p.getSellingDate()).append(";").append(p.getPrice()).append("\n");
             }
+            productListToWrite.add(sb.toString());
             System.out.println(sb);
-            Files.write(path, sb.toString().getBytes(StandardCharsets.UTF_8));
+            System.out.println(productListToWrite.toString());
+
+            Files.write(path, productListToWrite);
         }
         catch (IOException ioe){
             ioe.printStackTrace();

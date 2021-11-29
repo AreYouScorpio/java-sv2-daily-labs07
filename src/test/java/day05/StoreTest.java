@@ -20,7 +20,7 @@ public class StoreTest {
 
         Product product1 = new Product("Alma", LocalDate.of(2020,01,02), 200);
         Product product2 = new Product("Körte", LocalDate.of(2020,01,03), 400);
-        Product product4 = new Product("Görögdinnye", LocalDate.of(2020,01,03), 666);
+        Product product4 = new Product("Görögdinnye", LocalDate.of(2020,03,03), 666);
         // Product product3 = new Product("Liba", LocalDate.of(2022,01,03), 600);
         store.addProduct(product1);
         store.addProduct(product2);
